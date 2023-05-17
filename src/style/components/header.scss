@@ -1,0 +1,107 @@
+.header {
+  padding: $p-5 $p-10 * 5;
+  border-bottom: 1px solid $gray-1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $secondary;
+  overflow: hidden;
+  .header-logo {
+    font-size: $h1;
+    font-weight: $bold;
+    color: $tPurple;
+    @include respond(mdPhone) {
+      font-size: $h6;
+    }
+  }
+  .header-features {
+    .features-item {
+      display: flex;
+      align-items: center;
+      @include respond(mdPhone) {
+        display: none;
+      }
+    }
+    .features-side {
+      width: $w-10 * 3;
+      padding: $p-2 * 2;
+      display: none;
+      border: 1px solid $gray-1;
+      border-radius: $rounded;
+      background: transparent;
+      @include respond(mdPhone) {
+        display: block;
+      }
+    }
+  }
+  .header-translate {
+    margin-left: $m-10 * 2;
+    .translate-action {
+      width: $w-10 * 4;
+      padding: $p-2 * 2;
+      font-size: $body-1;
+      border: 1px solid $gray-1;
+      background: transparent;
+      cursor: pointer;
+      transition: all $durationSm $func;
+      &:hover {
+        border-color: $primary;
+      }
+      &:first-child {
+        border-right-width: 0.5px;
+        border-top-left-radius: $rounded;
+        border-bottom-left-radius: $rounded;
+      }
+      &:last-child {
+        border-left-width: 0.5px;
+        border-top-right-radius: $rounded;
+        border-bottom-right-radius: $rounded;
+      }
+    }
+    .translate-action--active {
+      border-color: $primary;
+    }
+  }
+  .header-side-backdrop {
+    background: $RGBA-dark-4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transition: all $durationSm $func;
+  }
+  .header-side-actions {
+    width: 0;
+    height: $h-100;
+    padding: $p-10 0;
+    background: $secondary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    transition: all $durationSm $func;
+    overflow: hidden;
+    .header-translate {
+      margin-left: 0;
+      margin-top: $m-10;
+    }
+  }
+  .header-side-backdrop--active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .header-side-actions--active {
+    width: $w-100 - 30;
+    padding: $p-10;
+  }
+  @include respond(mdPhone) {
+    padding: $p-5 $p-10;
+  }
+}

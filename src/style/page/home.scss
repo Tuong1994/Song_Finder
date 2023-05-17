@@ -1,0 +1,81 @@
+.home {
+  padding: $p-10 * 5;
+  .home-header {
+    margin: $m-10 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .header-title {
+      font-size: $h4;
+      font-weight: $semiBold;
+      @include respond(mdPhone) {
+        font-size: $default;
+      }
+    }
+    .header-control {
+      @include respond(mdPhone) {
+        width: $w-10 * 15;
+      }
+    }
+  }
+  .home-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    .list-card {
+      width: $w-100;
+      .card-image {
+        width: $w-100;
+        height: $h-10 * 20;
+        border-radius: $rounded;
+        overflow: hidden;
+        .image-view {
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+    @include respond(laptop) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 15px;
+    }
+    @include respond(smTablet) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 15px;
+    }
+    @include respond(mdPhone) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .home-empty {
+    width: $w-100;
+    height: $h-100-vh - 50vh;
+    background: $secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .home-loading {
+    width: $w-100;
+    height: $h-100-vh - 50vh;
+    background: $secondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .loading-icon {
+      animation: spin 0.5s linear infinite;
+    }
+  }
+  @include respond(lgTablet) {
+    padding: $p-10 * 2 $p-10;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

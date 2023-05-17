@@ -1,0 +1,15 @@
+.card {
+  border: 1px solid $gray-1;
+  border-radius: $rounded;
+  transition: all $durationSm $func;
+  &:hover {
+    box-shadow: 0 0 10px $gray-2;
+  }
+  .card-header {
+    padding: $p-10;
+    border-bottom: 1px solid $gray-1;
+  }
+  .card-body {
+    padding: $p-10;
+  }
+}

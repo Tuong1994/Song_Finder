@@ -1,0 +1,16 @@
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin: $m-10 0;
+  .row-title {
+    width: $w-100 - 70;
+    margin-right: $m-10;
+    font-size: $body-1;
+    font-weight: $semiBold;
+  }
+  .row-content {
+    width: $w-100 - 30;
+    text-align: right;
+    font-size: $body-1;
+  }
+}
